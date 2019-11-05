@@ -127,22 +127,22 @@ def calculate_summary(data_dictionary, column, debug=False):
         stdev = np.std(array)
         mean = np.mean(array)
      
-     print(f'=== Summary for "{column}" ===')
-     print(f'Guessed data type: {data_type}')
+     print('=== Summary for "%s" ==='.format(column))
+     print('Guessed data type: ', data_type)
      
      if data_type != 'categorical':
-        print(f'Min: {min}')
-        print(f'Max: {max}')
-        print(f'Stdev: {stdev}')
-        print(f'Mean: {mean}')
+        print('Min: ', min)
+        print('Max: ', max)
+        print('Stdev: ', stdev)
+        print('Mean: ', mean)
      
 def calculate_interpolation(data_dictionary, interpolation):
 
     column1, column2, value = interpolation.split(",")
-    print(f'Params {column1}, {column2}, {value}')
+    print('Params "%s", "%s", "%s"'.format(column1, column2, value))
     value = float(value)
     column1 = column1.strip()
-    column2 = column2.strip()
+    column2 = column2.strip()   
     
     if column1 not in data_dictionary:
         print('Invalid column name: ', column1)
